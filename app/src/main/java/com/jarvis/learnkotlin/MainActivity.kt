@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.jarvis.baselibrary.utils.CacheUtils
+import com.jarvis.baselibrary.utils.SpUtil
 import com.jarvis.baselibrary.utils.Utils
 import com.jarvis.learnkotlin.entity.User
 import com.jarvis.learnkotlin.widget.CodeView
@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         etPassword = findViewById(R.id.et_password)
         etCode = findViewById(R.id.et_code)
 
-        etUsername.setText(CacheUtils.get(usernameKey))
+        etUsername.setText(SpUtil.get(usernameKey, ""))
 //        etUsername.text = Editable.Factory.getInstance().newEditable("qa")
-        etPassword.setText(CacheUtils.get(passwordKey))
+        etPassword.setText(SpUtil.get(passwordKey, ""))
 
         val btnLogin = findViewById<Button>(R.id.btn_login)
         val codeView = findViewById<CodeView>(R.id.code_view)
@@ -61,8 +61,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val code = etCode.text.toString().trim()
         val user = User(username, password, code)
         if (verify(user)) {
-            CacheUtils.save(usernameKey, username)
-            CacheUtils.save(passwordKey, password)
+            SpUtil.save(usernameKey, username)
+            SpUtil.save(passwordKey, password)
         }
 
         startActivity(Intent(this, LessonActivity::class.java))

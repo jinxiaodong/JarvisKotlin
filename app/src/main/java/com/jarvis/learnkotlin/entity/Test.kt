@@ -1,5 +1,7 @@
 package com.jarvis.learnkotlin.entity
 
+import java.util.*
+
 
 /**
  * @author jinxiaodong
@@ -26,6 +28,7 @@ data class Response(var code: Int, var message: String, var body: User)
 //}
 
 fun main() {
+    println(Date())
 //    println(user)
 //    println(userCopy)
 //    // == 调用equals

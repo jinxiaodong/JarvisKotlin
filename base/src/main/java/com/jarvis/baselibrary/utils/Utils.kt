@@ -5,7 +5,7 @@ package com.jarvis.baselibrary.utils
 import android.content.res.Resources
 import android.util.TypedValue
 import android.widget.Toast
-import com.jarvis.baselibrary.BaseApplication
+import com.jarvis.baselibrary.helper.AppHelper
 
 /**
  * @author jinxiaodong
@@ -20,9 +20,7 @@ fun Float.dp2px(): Float {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this, displayMetrics);
 }
 
-fun String.isMobile(){
-    return
-}
+
 
 //扩展
 
@@ -37,8 +35,7 @@ object Utils {
     @JvmOverloads
     fun toast(string: String, duration: Int = Toast.LENGTH_SHORT) {
         var ss :String = ""
-        ss.isMobile()
-        Toast.makeText(BaseApplication.currentApplication, string, duration).show()
+        Toast.makeText(AppHelper.currentApplication, string, duration).show()
     }
 
 

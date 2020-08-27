@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion app.compileSdkVersion
@@ -9,6 +10,7 @@ android {
         minSdkVersion app.minSdkVersion
         targetSdkVersion app.targetSdkVersion
         consumerProguardFiles "consumer-rules.pro"
+
     }
     resourcePrefix "base_"
 
@@ -18,16 +20,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+}
+
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
 }
 
 dependencies {
-//    implementation fileTree(dir: "libs", include: ["*.jar"])
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-//    implementation 'androidx.core:core-ktx:1.3.1'
-//    implementation 'androidx.appcompat:appcompat:1.2.0'
-//    testImplementation 'junit:junit:4.12'
-//    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     api supportDependencies.supportv4
     api supportDependencies.appCompat
@@ -38,6 +41,8 @@ dependencies {
     api supportDependencies.multidex
     api supportDependencies.kotlin_stdlib
     api supportDependencies.ktx
+    api supportDependencies.navigation_fragment
+    api supportDependencies.navigation_ui
     api supportDependencies.okhttp3
     api supportDependencies.gson
     api supportDependencies.retrofit2
@@ -45,4 +50,7 @@ dependencies {
     api supportDependencies.scalarsConverte
     api supportDependencies.gsonConverter
     api supportDependencies.swiperefreshlayout
+    api supportDependencies.arouter
+    kapt supportDependencies.arouter_compiler
+    api supportDependencies.logger
 }

@@ -10,9 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.jarvis.baselibrary.BaseView
-import com.jarvis.baselibrary.utils.CacheUtils
+import com.jarvis.baselibrary.utils.SpUtil
 import com.jarvis.learnkotlin.entity.Lesson
-import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 class LessonActivity : AppCompatActivity(), BaseView<LessonPresenter>,
@@ -37,11 +36,11 @@ class LessonActivity : AppCompatActivity(), BaseView<LessonPresenter>,
 
     class Saver(var key: String) {
         operator fun getValue(thisRef: LessonActivity, property: KProperty<*>): String {
-            return CacheUtils.get(key)!!
+            return SpUtil.get(key,"")
         }
 
         operator fun setValue(thisRef: LessonActivity, property: KProperty<*>, value: String) {
-            CacheUtils.save(key, value)
+            SpUtil.save(key, value)
         }
     }
 
