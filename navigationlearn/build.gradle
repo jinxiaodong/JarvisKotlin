@@ -7,6 +7,7 @@ if (isModule.toBoolean()) {
 
 }
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion app.compileSdkVersion
@@ -24,7 +25,7 @@ android {
         }
     }
 
-    resourcePrefix "nav_learn_"
+    resourcePrefix "nav_"
 
     sourceSets {
         main {
@@ -66,6 +67,7 @@ dependencies {
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation project(":base")
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt supportDependencies.arouter_compiler
 
 }

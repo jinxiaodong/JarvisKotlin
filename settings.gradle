@@ -1,3 +1,4 @@
+include ':kotlingrammar'
 include ':navigationlearn'
 include ':base'
 include ':app'

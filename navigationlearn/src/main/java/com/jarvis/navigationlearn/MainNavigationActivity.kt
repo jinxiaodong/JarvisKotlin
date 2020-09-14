@@ -10,6 +10,6 @@ class MainNavigationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_navigation_)
+        setContentView(R.layout.nav_activity_main_navigation)
     }
 }
