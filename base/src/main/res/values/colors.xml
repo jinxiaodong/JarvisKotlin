@@ -6,6 +6,7 @@
     <color name="base_wait">#8F9DEE</color>
     <color name="base_playback">#303F9F</color>
     <color name="base_live">#FF4081</color>
-
+    <color name="base_black">#000000</color>
+    <color name="base_white">#ffffff</color>
 
 </resources>

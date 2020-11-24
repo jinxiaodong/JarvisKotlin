@@ -1,3 +1,4 @@
+include ':hencoder'
 include ':kotlingrammar'
 include ':navigationlearn'
 include ':base'

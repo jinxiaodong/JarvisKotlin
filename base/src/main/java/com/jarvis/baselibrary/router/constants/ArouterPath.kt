@@ -10,6 +10,11 @@ class ArouterPath {
     object Navigationlearn {
         const val MainNavigationActivity = "/navigationlearn/MainNavigationActivity"
     }
+
+    object Hencoder{
+        const val HCMainActivity = "/hencoder/HCMainActivity"
+        const val HCViewDrawActivity = "/hencoder/HCViewDrawActivity"
+    }
 }
 
 
