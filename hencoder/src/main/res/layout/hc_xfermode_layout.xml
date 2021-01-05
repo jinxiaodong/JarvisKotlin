@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="CLEAR"
+            app:hc_text="CLEAR" />
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="SRC"
+            app:hc_text="SRC" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="DST"
+            app:hc_text="DST" />
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="SRC_OVER"
+            app:hc_text="SRC_OVER" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="DST_OVER"
+            app:hc_text="DST_OVER" />
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="SRC_IN"
+            app:hc_text="SRC_IN" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="DST_IN"
+            app:hc_text="DST_IN" />
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="SRC_OUT"
+            app:hc_text="SRC_OUT" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="DST_OUT"
+            app:hc_text="DST_OUT" />
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="SRC_ATOP"
+            app:hc_text="SRC_ATOP" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="DST_ATOP"
+            app:hc_text="DST_ATOP" />
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="XOR"
+            app:hc_text="XOR" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="DARKEN"
+            app:hc_text="DARKEN" />
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="LIGHTEN"
+            app:hc_text="LIGHTEN" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="MULTIPLY"
+            app:hc_text="MULTIPLY" />
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="SCREEN"
+            app:hc_text="SCREEN" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="ADD"
+            app:hc_text="ADD" />
+
+        <com.jarvis.hencoder.view.xfermode.XfermodeView
+            android:layout_width="160dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="10dp"
+            android:background="#112489F2"
+            app:hc_porterduffxfermode="OVERLAY"
+            app:hc_text="OVERLAY" />
+
+    </LinearLayout>
+</LinearLayout>

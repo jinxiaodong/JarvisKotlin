@@ -12,9 +12,6 @@
         android:theme="@style/BaseAppTheme"
         tools:replace="android:theme,name,icon,allowBackup,label">
 
-        <activity android:name=".view.HCViewDrawActivity"/>
-        <activity android:name=".HCMainActivity" />
-
         <activity android:name="debug.ModuleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".HCMainActivity" />
+        <activity android:name=".view.HCViewDrawActivity"/>
+        <activity android:name=".view.HCViewActivity"/>
+        <activity android:name=".view.HCMaterialEditTextActivity"/>
+        <activity android:name=".view.HCScaleableImageViewActivity"/>
+        <activity android:name=".view.TouchViewActivity"/>
+
     </application>
 
 </manifest>

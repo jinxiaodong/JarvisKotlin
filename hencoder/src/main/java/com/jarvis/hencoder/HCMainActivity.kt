@@ -1,6 +1,5 @@
 package com.jarvis.hencoder
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,12 +15,23 @@ import com.jarvis.hencoder.databinding.HcActivityMainBinding
 @Route(path = ArouterPath.Hencoder.HCMainActivity)
 class HCMainActivity : AppCompatActivity() {
 
+    private val mutableList: MutableList<String>
+        get() {
+            return mutableListOf(
+                "View_Draw",
+                "Xfemode",
+                "MaterialEdittext",
+                "ScaleableImageView",
+                "TouchView"
+            )
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val contentView =
             DataBindingUtil.setContentView<HcActivityMainBinding>(this, R.layout.hc_activity_main)
 
-        val mutableListOf = mutableListOf<String>("View_Draw")
+        val mutableListOf = mutableList
         contentView.recycleview.layoutManager = LinearLayoutManager(this)
         contentView.recycleview.adapter =
             object : BaseQuickRecyclerAdapter<String>(this, mutableListOf) {
@@ -35,6 +45,7 @@ class HCMainActivity : AppCompatActivity() {
                     item: String
                 ) {
                     val button = holder.getButton(R.id.button)
+                    button.text = item
                     button.setOnClickListener(View.OnClickListener {
                         handleClick(position, item)
                     })
@@ -44,9 +55,21 @@ class HCMainActivity : AppCompatActivity() {
     }
 
     private fun handleClick(position: Int, item: String) {
-        when (position) {
-            0 -> ARouter.getInstance()
+        when (item) {
+            mutableList[0] -> ARouter.getInstance()
                 .build(ArouterPath.Hencoder.HCViewDrawActivity)
+                .navigation()
+            mutableList[1] -> ARouter.getInstance()
+                .build(ArouterPath.Hencoder.HCXferModeActivity)
+                .navigation()
+            mutableList[2] -> ARouter.getInstance()
+                .build(ArouterPath.Hencoder.HCMaterialEditTextActivity)
+                .navigation()
+            mutableList[3] -> ARouter.getInstance()
+                .build(ArouterPath.Hencoder.HCScaleableImageViewActivity)
+                .navigation()
+            mutableList[4] -> ARouter.getInstance()
+                .build(ArouterPath.Hencoder.TouchViewActivity)
                 .navigation()
         }
     }

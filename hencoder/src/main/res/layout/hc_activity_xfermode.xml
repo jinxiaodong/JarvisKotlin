@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.HCViewDrawActivity">
-
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.jarvis.hencoder.view.draw.DrawTestView
+        <com.jarvis.hencoder.view.text.MultilineTextView
             android:layout_width="match_parent"
-            android:layout_height="400dp" />
+            android:layout_height="400dp"/>
 
-
-        <com.jarvis.hencoder.view.draw.DashboardView
+        <com.jarvis.hencoder.view.text.SportView
             android:layout_width="match_parent"
-            android:layout_height="400dp" />
+            android:layout_height="600dp" />
 
-        <com.jarvis.hencoder.view.draw.PieView
+        <com.jarvis.hencoder.view.xfermode.AvatarView
             android:layout_width="match_parent"
-            android:layout_height="400dp" />
+            android:layout_height="200dp" />
+
+        <include layout="@layout/hc_xfermode_layout"></include>
+
 
     </LinearLayout>
+
 </androidx.core.widget.NestedScrollView>

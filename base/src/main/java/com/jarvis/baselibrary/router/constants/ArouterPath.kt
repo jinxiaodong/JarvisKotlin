@@ -14,6 +14,10 @@ class ArouterPath {
     object Hencoder{
         const val HCMainActivity = "/hencoder/HCMainActivity"
         const val HCViewDrawActivity = "/hencoder/HCViewDrawActivity"
+        const val HCXferModeActivity = "/hencoder/HCXferModeActivity"
+        const val HCMaterialEditTextActivity = "/hencoder/HCMaterialEditTextActivity"
+        const val HCScaleableImageViewActivity = "/hencoder/HCScaleableImageViewActivity"
+        const val TouchViewActivity = "/hencoder/TouchViewActivity"
     }
 }
 

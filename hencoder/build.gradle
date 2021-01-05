@@ -56,6 +56,9 @@ android {
             arg("AROUTER_MODULE_NAME", project.getName())
         }
     }
+
+    kotlinOptions { jvmTarget = 1.8 }
+
 }
 
 dependencies {
