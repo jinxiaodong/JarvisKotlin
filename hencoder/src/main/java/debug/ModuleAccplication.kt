@@ -2,6 +2,7 @@ package debug
 
 import com.jarvis.baselibrary.base.BaseApplication
 import com.jarvis.hencoder.BuildConfig
+import com.squareup.leakcanary.LeakCanary
 
 /**
  * @author jinxiaodong
@@ -14,5 +15,9 @@ class ModuleAccplication : BaseApplication() {
 
     override fun onCreate() {
         super.onCreate()
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return
+        }
+        val install = LeakCanary.install(this)
     }
 }

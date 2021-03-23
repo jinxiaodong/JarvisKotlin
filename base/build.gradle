@@ -39,6 +39,7 @@ dependencies {
     api supportDependencies.material
     api supportDependencies.multidex
     api supportDependencies.kotlin_stdlib
+    api supportDependencies.kotlin_reflect
     api supportDependencies.ktx
     api supportDependencies.navigation_fragment
     api supportDependencies.navigation_ui
@@ -46,6 +47,7 @@ dependencies {
     api supportDependencies.gson
     api supportDependencies.retrofit2
     api supportDependencies.rxjavaAdapter
+    api supportDependencies.rxandroid
     api supportDependencies.scalarsConverte
     api supportDependencies.gsonConverter
     api supportDependencies.swiperefreshlayout

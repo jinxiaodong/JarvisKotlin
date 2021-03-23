@@ -24,7 +24,7 @@ class CodeView @JvmOverloads constructor(context: Context, attr: AttributeSet? =
     private val paint = Paint().apply {
         isAntiAlias = true
         style = Paint.Style.STROKE
-        color = getContext().getColor(R.color.colorAccent)
+        color = getContext().getColor(R.color.base_colorAccent)
         strokeWidth = 6f.dp2px()
     }
 
@@ -42,7 +42,7 @@ class CodeView @JvmOverloads constructor(context: Context, attr: AttributeSet? =
     init {
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
         gravity = Gravity.CENTER
-        setBackgroundColor(getContext().getColor(R.color.colorPrimary))
+        setBackgroundColor(getContext().getColor(R.color.base_colorPrimary))
         setTextColor(Color.WHITE)
         updateCode()
     }

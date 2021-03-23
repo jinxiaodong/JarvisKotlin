@@ -43,9 +43,9 @@ class LessonAdapter : RecyclerView.Adapter<LessonViewHolder>() {
             lesson.state?.let {
                 setText(R.id.tv_state, it.stateName())
                 val colorRes = when (it) {
-                    Lesson.State.PLAYBACK -> R.color.playback
-                    Lesson.State.LIVE -> R.color.live
-                    Lesson.State.WAIT -> R.color.wait
+                    Lesson.State.PLAYBACK -> R.color.base_playback
+                    Lesson.State.LIVE -> R.color.base_live
+                    Lesson.State.WAIT -> R.color.base_wait
                 }
                 val backgroundColor = itemView.context.getColor(colorRes)
                 getView<View>(R.id.tv_state)!!.setBackgroundColor(backgroundColor)

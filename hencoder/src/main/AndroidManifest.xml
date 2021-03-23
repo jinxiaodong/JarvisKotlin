@@ -15,6 +15,7 @@
         <activity android:name=".view.HCMaterialEditTextActivity"/>
         <activity android:name=".view.HCScaleableImageViewActivity"/>
         <activity android:name=".view.TouchViewActivity"/>
+        <activity android:name=".view.LeakCanaryActivity"/>
 
     </application>
 

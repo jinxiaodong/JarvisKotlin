@@ -1,4 +1,5 @@
 @file:JvmName("ArouterPath")
+
 package com.jarvis.baselibrary.router.constants
 
 /**
@@ -7,17 +8,24 @@ package com.jarvis.baselibrary.router.constants
  * @date 2020/8/27
  */
 class ArouterPath {
+
+    object MainAPP {
+        const val JLogDemoActivity = "/mainapp/JLogDemoActivity"
+    }
+
     object Navigationlearn {
         const val MainNavigationActivity = "/navigationlearn/MainNavigationActivity"
     }
 
-    object Hencoder{
+    object Hencoder {
         const val HCMainActivity = "/hencoder/HCMainActivity"
         const val HCViewDrawActivity = "/hencoder/HCViewDrawActivity"
         const val HCXferModeActivity = "/hencoder/HCXferModeActivity"
         const val HCMaterialEditTextActivity = "/hencoder/HCMaterialEditTextActivity"
         const val HCScaleableImageViewActivity = "/hencoder/HCScaleableImageViewActivity"
         const val TouchViewActivity = "/hencoder/TouchViewActivity"
+        const val GenericsActivity = "/hencoder/GenericsActivity"
+        const val LeakCanaryActivity = "/hencoder/LeakCanaryActivity"
     }
 }
 

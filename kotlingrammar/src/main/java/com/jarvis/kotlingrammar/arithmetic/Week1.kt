@@ -1,11 +1,13 @@
 package com.jarvis.kotlingrammar.arithmetic
 
+import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
+import kotlin.collections.HashSet
 
 /**
  * @author jinxiaodong
- * @description：语法第一周
+ * @description：算法法第一周
  * @date 2020/11/24
  */
 fun main() {
@@ -116,39 +118,31 @@ class ListNode {
 }
 
 //遍历
-fun addTwoNumbers(node1: ListNode, node2: ListNode): ListNode? {
-    var carry = 0
-    var l1: ListNode?
-    var l2: ListNode?
+fun addTwoNumbers(node1: ListNode?, node2: ListNode?): ListNode? {
+
+    var l1 = node1
+    var l2 = node2
     var head: ListNode? = null
     var current: ListNode? = null
-    l1 = node1
-    l2 = node2
-    var v1: Int = 0
-    var v2: Int = 0
+    var carray = 0
+    var v1 = 0
+    var v2 = 0
     while (l1 != null || l2 != null) {
-        if (l1 != null) {
-            v1 = l1.value
-        }
-        if (l2 != null) {
-            v2 = l2.value
-        }
-        var sum = carry + v1 + v2
-        carry = sum / 10
+
+        v1 = l1?.value ?: 0
+        v2 = l2?.value ?: 0
+        var sum = v1 + v2 + carray
+        carray = sum / 10
+        sum %= 10
         if (head == null) {
-            head = ListNode(sum % 10)
+            head = ListNode(sum)
             current = head
         } else {
-            current?.next = ListNode(sum % 10)
+            current?.next = ListNode(sum)
             current = current?.next
         }
-
         l1 = l1?.next
         l2 = l2?.next
-
-    }
-    if (carry == 1) {
-        current?.next = ListNode(1)
     }
     return head
 }
@@ -173,3 +167,171 @@ fun dfs(l: ListNode?, r: ListNode?, i: Int): ListNode? {
 }
 
 
+/**
+ *
+ * 第四题：括号匹配
+ *
+ * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+ * 有效字符串需满足：
+ *              左括号必须用相同类型的右括号闭合。
+ *              左括号必须以正确的顺序闭合。
+ *
+ *
+ *              示例 1：
+ *              输入：s = "()"
+ *              输出：true
+ *
+ *
+ *              示例 2：
+ *              输入：s = "()[]{}"
+ *              输出：true
+ */
+fun isValid(s: String): Boolean {
+
+//    while (s.contains("{}") ||
+//        s.contains("[]") ||
+//        s.contains("()")
+//    ) {
+//
+//        s.replace("{}", "")
+//        s.replace("()", "")
+//        s.replace("[]", "")
+//    }
+//
+//    return s == ""
+
+
+    val stack = Stack<Char>()
+    for (i in s) {
+        when (i) {
+
+            '[' -> stack.push(']')
+            '(' -> stack.push(')')
+            '{' -> stack.push('}')
+            ']', ')', '}' -> {
+                if (!stack.isEmpty() && stack.peek() == i) {
+                    stack.pop()
+                } else {
+                    return false;
+                }
+            }
+
+        }
+    }
+    return stack.isEmpty()
+
+}
+
+/**
+ *第五题：
+ * 请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点。传入函数的唯一参数为 要被删除的节点 。
+ * 现有一个链表 -- head = [4,5,1,9]，它可以表示为:4-->5-->1-->9
+ * 找不到上一个节点，那么只能将下一个节点的值赋值给当前节点。
+ */
+
+fun deleteNode(node: ListNode2?): Unit {
+    node?.value = node?.next?.value
+    node?.next = node?.next?.next
+
+}
+
+class ListNode2(var value: Int?) {
+    var next: ListNode2? = null
+}
+
+
+/**
+ * 第六题
+ * 反转一个单链表。
+ * 示例:
+ * 输入: 1->2->3->4->5->NULL
+ * 输出: 5->4->3->2->1->NULL
+ * 进阶:
+ * 你可以迭代或递归地反转链表。你能否用两种方法解决这道题？
+ */
+fun reverseList(head: ListNode?): ListNode? {
+    var current = head
+    var pre: ListNode? = null
+    while (current != null) {
+        val next = current.next
+        current.next = pre
+        pre = current
+        current = next
+    }
+    return pre
+}
+
+fun reverseList2(head: ListNode?): ListNode? {
+    if (head?.next == null) {
+        return head
+    }
+    val p = reverseList2(head.next)
+    head.next?.next = head
+    head.next = null
+    return p
+}
+
+
+/**
+ * 第七题
+ * 给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。
+ *
+ * 示例 1:
+ *      输入: 1->1->2
+ *      输出: 1->2
+ * 示例 2:
+ *      输入: 1->1->2->3->3
+ *      输出: 1->2->3
+ *
+ * */
+
+fun deleteDuplicates(head: ListNode?): ListNode? {
+    var current = head
+    while (current?.next != null) {
+        if (current.value == current.next?.value) {
+            current.next = current.next?.next
+        } else {
+            current = current.next
+        }
+    }
+    return head
+}
+
+/**
+ * 第八题
+ *
+ * 给定一个链表，判断链表中是否有环。
+ * 如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+ * 如果链表中存在环，则返回 true 。 否则，返回 false 。
+ * 进阶：
+ * 你能用 O(1)（即，常量）内存解决此问题吗？
+ *
+ * 解法一：hash表法
+ * 解法二：快慢指针
+ * */
+fun hasCycle(head: ListNode?): Boolean {
+    var current = head
+    val hashSet = HashSet<ListNode>()
+    while (current != null) {
+        if (hashSet.contains(current)) {
+            return true
+        } else {
+            hashSet.add(current)
+        }
+    }
+    return false
+}
+
+fun hasCycle2(head: ListNode?): Boolean {
+    var fast = head?.next
+    var slow = head
+    while (fast != null && slow != null) {
+        if (fast == slow) {
+            return true
+        } else {
+            fast = fast.next?.next
+            slow = slow.next
+        }
+    }
+    return false
+}
