@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var contentView: ActivityMainBinding
     private val items = mutableListOf(
         "JLog",
-        "Test"
+        "JlibMaintActivity"
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,7 +55,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun handleClick(item: String) {
         when (item) {
-            items[0] -> startActivity(Intent(this,JLogDemoActivity::class.java))
+            items[0] -> startActivity(Intent(this, JLogDemoActivity::class.java))
+            items[1] -> startActivity(Intent(this, JLibMainActivity::class.java))
             else -> return
         }
 

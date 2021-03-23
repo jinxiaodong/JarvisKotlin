@@ -34,13 +34,20 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
 
     }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src/main/assets'
+            }
+        }
+    }
 
 }
 
 dependencies {
 //    implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation project(":base")
-    implementation project(":Jlibrary")
+    implementation project(':jui')
     implementation 'junit:junit:4.12'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

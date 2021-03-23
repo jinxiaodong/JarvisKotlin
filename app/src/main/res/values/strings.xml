@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">LearnKotlin</string>
+
+    <string name="app_home">&#xe8c6;</string>
+    <string name="app_recommend">&#xe63f;</string>
+    <string name="app_chat">&#xe63c;</string>
+    <string name="app_profile">&#xe634;</string>
+    <string name="app_category">&#xf00a6;</string>
+    <string name="app_favorite">&#xe639;</string>
+    <string name="app_favorite1">&#xe620;</string>
+
 </resources>
